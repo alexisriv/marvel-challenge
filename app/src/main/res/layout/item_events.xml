@@ -43,15 +43,13 @@
 
             <TextView
                 android:id="@+id/nameTextView"
+                style="@style/TitleTextView.OffCaps"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="sans-serif-condensed-light"
                 android:maxLines="1"
                 android:text="@{ event.title }"
-                android:textColor="@color/black"
-                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView"
                 app:layout_constraintStart_toEndOf="@+id/characterImageView"
@@ -60,13 +58,12 @@
 
             <TextView
                 android:id="@+id/startDateTextView"
+                style="@style/ContentTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:textColor="@color/blue"
-                android:textSize="14sp"
                 app:date_text="@{ event.start }"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView"
@@ -76,13 +73,12 @@
 
             <TextView
                 android:id="@+id/endDateTextView"
+                style="@style/ContentTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="8dp"
-                android:textColor="@color/blue"
-                android:textSize="14sp"
                 app:date_text="@{ event.end }"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView"

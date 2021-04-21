@@ -21,7 +21,9 @@ import java.util.*
 private const val formatFrom = "yyyy-MM-dd HH:mm:ss"
 private const val formatTo = "dd 'de' MMMM YYYY"
 
-private const val format = "yyyy-MM-dd'T'HH:mm:ss"
+enum class TypeImage(val text: String) {
+    STANDARD_MEDIUM("standard_medium")
+}
 
 @BindingAdapter("data_characters")
 fun dataCharactersRecyclerView(recyclerView: RecyclerView?, characters: List<Character>?) {
@@ -39,10 +41,6 @@ fun dataEventsRecyclerView(recyclerView: RecyclerView?, events: List<Event>?) {
         adapter.events.addAll(events)
         adapter.notifyItemInserted(events.size - API_QUERY_EVENTS_LIMIT)
     }
-}
-
-enum class TypeImage(val text: String) {
-    STANDARD_MEDIUM("standard_medium")
 }
 
 @BindingAdapter("image_url", "image_extension", "type_image")
@@ -79,7 +77,7 @@ fun goCharacterDetailActivity(view: View?, character: Character?) {
 }
 
 @BindingAdapter("comics")
-fun setDataComic(view: LinearLayout, comics: MutableList<Comic>?) {
+fun setDataComic(view: LinearLayout?, comics: MutableList<Comic>?) {
     if (view == null || comics.isNullOrEmpty()) return
 
     for (item: Comic in comics) {
@@ -99,10 +97,11 @@ fun setDataComic(view: LinearLayout, comics: MutableList<Comic>?) {
 fun getDate(textView: TextView?, dates: MutableList<DateComic>?) {
     if (textView == null || dates == null) return
 
-    val calendar = Calendar.getInstance()
-    calendar.time = dates.filter { dateComic ->
-        "onsaleDate" == dateComic.type
-    }.takeIf { it.size != 0 }?.get(0)?.date
-
-    textView.text = calendar.get(Calendar.YEAR).toString()
+    dates.filter { dateComic ->
+        "onsaleDate".equals(dateComic.type, ignoreCase = true)
+    }.takeIf { it.isNotEmpty() }?.let {
+        val calendar = Calendar.getInstance()
+        calendar.time = it[0].date
+        textView.text = calendar.get(Calendar.YEAR).toString()
+    }
 }
