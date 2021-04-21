@@ -9,10 +9,10 @@ import org.koin.dsl.module
 import org.sixelasavir.product.marvelfans.api.CharacterApi
 import org.sixelasavir.product.marvelfans.api.ClientBuilder
 import org.sixelasavir.product.marvelfans.api.EventApi
-import org.sixelasavir.product.marvelfans.api.repositories.CharacterRepository
-import org.sixelasavir.product.marvelfans.api.repositories.CharacterRepositoryImpl
-import org.sixelasavir.product.marvelfans.api.repositories.EventRepository
-import org.sixelasavir.product.marvelfans.api.repositories.EventRepositoryImpl
+import org.sixelasavir.product.marvelfans.repositories.CharacterRepository
+import org.sixelasavir.product.marvelfans.repositories.CharacterRepositoryImpl
+import org.sixelasavir.product.marvelfans.repositories.EventRepository
+import org.sixelasavir.product.marvelfans.repositories.EventRepositoryImpl
 import org.sixelasavir.product.marvelfans.ui.viewmodel.CharacterDetailViewModel
 import org.sixelasavir.product.marvelfans.ui.viewmodel.CharacterViewModel
 import org.sixelasavir.product.marvelfans.ui.viewmodel.EventViewModel
@@ -25,8 +25,8 @@ class MainApplication : Application() {
         single<CharacterRepository> { CharacterRepositoryImpl(api = characterApi) }
         single<EventRepository> { EventRepositoryImpl(api = eventApi) }
         viewModel { CharacterViewModel(get()) }
-        viewModel { EventViewModel(get())}
-        viewModel { CharacterDetailViewModel(get())}
+        viewModel { EventViewModel(get()) }
+        viewModel { CharacterDetailViewModel(get()) }
     }
 
     override fun onCreate() {

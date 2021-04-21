@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.util.rangeTo
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -40,8 +42,23 @@ class EventFragment : Fragment() {
                     }
                 })
             }
-            adapter = EventAdapter(mutableListOf())
+
+            adapter = EventAdapter(mutableListOf()) {
+                eventViewModel.loadComics(it)
+            }
+
+            eventViewModel.eventWrapper.observe(viewLifecycleOwner, Observer {
+                (adapter as EventAdapter).events.also { eventWrappers ->
+                    for (i: Int in  0 until eventWrappers.size - 1){
+                        if(eventWrappers[i].event.id == it.event.id){
+                            eventWrappers[i].comics = it.comics
+                            (adapter as EventAdapter).notifyItemChanged(i)
+                        }
+                    }
+                }
+            })
         }
+
         return binding.root
     }
 }

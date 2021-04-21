@@ -8,7 +8,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.sixelasavir.product.marvelfans.Character
-import org.sixelasavir.product.marvelfans.api.repositories.CharacterRepository
+import org.sixelasavir.product.marvelfans.repositories.CharacterRepository
 
 class CharacterViewModel(private val characterRepository: CharacterRepository) : ViewModel() {
 

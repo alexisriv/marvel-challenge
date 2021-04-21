@@ -1,7 +1,6 @@
 package org.sixelasavir.product.marvelfans
 
 import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
@@ -31,11 +30,18 @@ data class DateComic(
 
 @Parcelize
 data class Event(
+    val id: Long,
     val title: String,
     val thumbnail: Thumbnail,
-    val start: String,
-    val end: String
+    val start: String?,
+    val end: String?
 ) : Parcelable
+
+class EventWrapper(
+    var event: Event,
+    var comics: MutableList<Comic>? = null,
+    var isExpanded: Boolean = false
+)
 
 @Parcelize
 data class Thumbnail(

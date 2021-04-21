@@ -1,4 +1,4 @@
-package org.sixelasavir.product.marvelfans.api.repositories
+package org.sixelasavir.product.marvelfans.repositories
 
 import kotlinx.coroutines.flow.Flow
 import org.sixelasavir.product.marvelfans.Character

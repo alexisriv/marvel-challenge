@@ -9,12 +9,14 @@ import retrofit2.http.Query
 
 interface CharacterApi {
 
-    @GET("/v1/public/characters?$OTHER_QUERIES&orderBy=name")
+    @GET(URL_CHARACTER)
     suspend fun getCharacters(
         @Query("offset") offset: Int,
         @Query("limit") limit: Int = API_QUERY_CHARACTERS_LIMIT
     ): Response<Character>
 
-    @GET("/v1/public/characters/{characterId}/comics?$OTHER_QUERIES")
-    suspend fun getComicsOfCharacter(@Path("characterId") characterId: Long): Response<Comic>
+    @GET(URL_COMICS_OF_CHARACTER)
+    suspend fun getComicsOfCharacter(
+        @Path("characterId") characterId: Long
+    ): Response<Comic>
 }

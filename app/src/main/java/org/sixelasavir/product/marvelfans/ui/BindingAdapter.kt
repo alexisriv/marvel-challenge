@@ -35,7 +35,7 @@ fun dataCharactersRecyclerView(recyclerView: RecyclerView?, characters: List<Cha
 }
 
 @BindingAdapter("data_events")
-fun dataEventsRecyclerView(recyclerView: RecyclerView?, events: List<Event>?) {
+fun dataEventsRecyclerView(recyclerView: RecyclerView?, events: List<EventWrapper>?) {
     val adapter: EventAdapter = recyclerView?.adapter as EventAdapter
     if (events != null && events.isNotEmpty()) {
         adapter.events.addAll(events)

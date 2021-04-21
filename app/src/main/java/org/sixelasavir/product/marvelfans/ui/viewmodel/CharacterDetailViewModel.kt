@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import org.sixelasavir.product.marvelfans.Character
 import org.sixelasavir.product.marvelfans.Comic
 import org.sixelasavir.product.marvelfans.Thumbnail
-import org.sixelasavir.product.marvelfans.api.repositories.CharacterRepository
+import org.sixelasavir.product.marvelfans.repositories.CharacterRepository
 
 class CharacterDetailViewModel(private val characterRepository: CharacterRepository) : ViewModel() {
 
