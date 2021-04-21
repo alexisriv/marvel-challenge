@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/character_fragment">
+
+    <fragment
+        android:id="@+id/character_fragment"
+        android:name="org.sixelasavir.product.marvelfans.ui.CharacterFragment"
+        android:label="@string/title_fragment_character"
+        tools:layout="@layout/fragment_character" />
+
+    <fragment
+        android:id="@+id/event_fragment"
+        android:name="org.sixelasavir.product.marvelfans.ui.EventFragment"
+        android:label="@string/title_fragment_event"
+        tools:layout="@layout/fragment_event" />
+</navigation>

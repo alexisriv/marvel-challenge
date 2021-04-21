@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Marvel Fans</string>
+    <string name="title_activity_character_detail">MainActivity</string>
+    <string name="title_fragment_character">Personajes</string>
+    <string name="title_fragment_event">Eventos</string>
+    <string name="title_comics">Comics En Los Que Aparece</string>
+</resources>
