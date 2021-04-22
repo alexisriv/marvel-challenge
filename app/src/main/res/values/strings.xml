@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">Marvel Challenge</string>
+    <string name="welcome">Bienvenid@</string>
     <string name="title_activity_character_detail">MainActivity</string>
     <string name="title_fragment_character">Personajes</string>
     <string name="title_fragment_event">Eventos</string>
     <string name="title_comics">Comics En Los Que Aparece</string>
     <string name="tilte_comics_of_event">Comics a Discutir</string>
+
+    <string name="facebook_application_id" translatable="false">2860224557550434</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb2860224557550434</string>
 </resources>

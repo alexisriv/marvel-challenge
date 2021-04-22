@@ -24,7 +24,7 @@
         <item name="contentInsetStart">0dp</item>
         <item name="android:contentInsetStart">0dp</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
-        
+
     </style>
 
     <style name="TitleToolbar">
@@ -56,5 +56,12 @@
     <style name="ContentTextView">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="LoginTheme" parent="FirebaseUI">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/grey_light</item>
+        <item name="colorOnBackground">#CC3D3D</item>
     </style>
 </resources>
