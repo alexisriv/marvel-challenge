@@ -1,5 +1,7 @@
 package org.sixelasavir.product.marvelfans.ui
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -56,8 +58,6 @@ class MainActivity : AppCompatActivity() {
                         .setTheme(R.style.LoginTheme)
                         .build(), AUTH_REQUEST_CODE
                 )
-            } else {
-                Toast.makeText(this, R.string.welcome, Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -70,5 +70,17 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         if (listener != null) firebaseAuth.removeAuthStateListener(listener)
         super.onStop()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when {
+            requestCode == AUTH_REQUEST_CODE && resultCode == Activity.RESULT_OK -> {
+                Toast.makeText(this, R.string.welcome, Toast.LENGTH_LONG).show()
+            }
+            else -> {
+                // Nothing
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
