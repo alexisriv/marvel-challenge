@@ -3,11 +3,11 @@
 
     <item
         android:id="@+id/character_fragment"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_iron_man_selector"
         android:title="@string/title_fragment_character" />
 
     <item
         android:id="@+id/event_fragment"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_event_calendar_selector"
         android:title="@string/title_fragment_event" />
 </menu>
