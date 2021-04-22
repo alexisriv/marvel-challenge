@@ -18,6 +18,10 @@ class CharacterDetailActivity : AppCompatActivity() {
         val binding: ActivityCharacterDetailBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_character_detail)
         setSupportActionBar(binding.toolbar)
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
+
         binding.characterDetailVM = characterDetailViewModel
         binding.lifecycleOwner = this
         intent?.extras?.getParcelable<Character>("key_character")?.let { character ->
