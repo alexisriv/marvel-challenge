@@ -24,12 +24,22 @@
             android:theme="@style/Theme.MarvelFans.AppBarOverlay">
 
             <androidx.appcompat.widget.Toolbar
-                app:navigationIcon="@drawable/ic_close_white_24dp"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:popupTheme="@style/Theme.MarvelFans.PopupOverlay" />
+                android:paddingEnd="48dp"
+                app:navigationIcon="@drawable/ic_close_white_24dp"
+                app:popupTheme="@style/Theme.MarvelFans.PopupOverlay"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:id="@+id/titleNameToolbar"
+                    style="@style/TitleToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@{characterDetailVM.character.name}" />
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -46,13 +56,14 @@
                     android:id="@+id/characterDetailImageView"
                     android:layout_width="0dp"
                     android:layout_height="350dp"
-                    app:image_extension="@{ characterDetailVM.thumbnail.extension  }"
-                    app:image_url="@{ characterDetailVM.thumbnail.path  }"
+                    app:image_extension="@{ characterDetailVM.character.thumbnail.extension  }"
+                    app:image_url="@{ characterDetailVM.character.thumbnail.path  }"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:type_image="@{ TypeImage.STANDARD_MEDIUM }"
+                    tools:ignore="ContentDescription"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
@@ -63,7 +74,7 @@
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="40dp"
-                    android:text="@{ characterDetailVM.content }"
+                    android:text="@{ characterDetailVM.character.description }"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/characterDetailImageView" />

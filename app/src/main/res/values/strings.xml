@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Marvel Fans</string>
+    <string name="app_name">Marvel Challenge</string>
     <string name="title_activity_character_detail">MainActivity</string>
     <string name="title_fragment_character">Personajes</string>
     <string name="title_fragment_event">Eventos</string>

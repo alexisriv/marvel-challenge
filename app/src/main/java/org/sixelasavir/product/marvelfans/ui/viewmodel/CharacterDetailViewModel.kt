@@ -14,8 +14,7 @@ import org.sixelasavir.product.marvelfans.repositories.CharacterRepository
 class CharacterDetailViewModel(private val characterRepository: CharacterRepository) : ViewModel() {
 
     fun setData(character: Character) {
-        _thumbnail.value = character.thumbnail
-        _content.value = character.description
+        _character.value = character
     }
 
     fun loadComics(id: Long) {
@@ -26,13 +25,9 @@ class CharacterDetailViewModel(private val characterRepository: CharacterReposit
         }
     }
 
-    private val _thumbnail: MutableLiveData<Thumbnail> = MutableLiveData()
-    val thumbnail: LiveData<Thumbnail>
-        get() = _thumbnail
-
-    private val _content: MutableLiveData<String> = MutableLiveData()
-    val content: LiveData<String>
-        get() = _content
+    private val _character: MutableLiveData<Character> = MutableLiveData()
+    val character: LiveData<Character>
+        get() = _character
 
     private val _comics: MutableLiveData<List<Comic>> = MutableLiveData()
     val comics: LiveData<List<Comic>>

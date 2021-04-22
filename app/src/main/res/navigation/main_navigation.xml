@@ -8,12 +8,10 @@
     <fragment
         android:id="@+id/character_fragment"
         android:name="org.sixelasavir.product.marvelfans.ui.CharacterFragment"
-        android:label="@string/title_fragment_character"
         tools:layout="@layout/fragment_character" />
 
     <fragment
         android:id="@+id/event_fragment"
         android:name="org.sixelasavir.product.marvelfans.ui.EventFragment"
-        android:label="@string/title_fragment_event"
         tools:layout="@layout/fragment_event" />
 </navigation>
